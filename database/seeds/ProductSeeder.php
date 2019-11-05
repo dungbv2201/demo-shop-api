@@ -26,11 +26,11 @@ class ProductSeeder extends Seeder
         ];
 
         $jeans =[
-            'https://peaceful-sands-42159.herokuapp.com/images/quan-jean-1.jpg',
-            'https://peaceful-sands-42159.herokuapp.com/images/quan-jean-2.jpg',
-            'https://peaceful-sands-42159.herokuapp.com/images/quan-jean-3.jpg',
-            'https://peaceful-sands-42159.herokuapp.com/images/quan-jean-4.jpg',
-            'https://peaceful-sands-42159.herokuapp.com/images/quan-jean-6.jpg',
+            'https://peaceful-sands-42159.herokuapp.com/images/quan-j-1.jpg',
+            'https://peaceful-sands-42159.herokuapp.com/images/quan-j-2.jpg',
+            'https://peaceful-sands-42159.herokuapp.com/images/quan-j-3.jpg',
+            'https://peaceful-sands-42159.herokuapp.com/images/quan-j-4.jpg',
+            'https://peaceful-sands-42159.herokuapp.com/images/quan-j-6.jpg',
             'https://peaceful-sands-42159.herokuapp.com/images/quanj-5.jpg',
         ];
 
@@ -52,7 +52,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Quần Jean '.($key2+1),
                 'price' => random_int(10,100),
                 'sale_off' => $key %2 ==0? random_int(10,40):0,
-                'category_id' =>1,
+                'category_id' =>2,
                 'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
                 'image' =>$jean,
                 'stock' => random_int(5,20)
