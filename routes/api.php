@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::namespace('Client')->group(function(){
+
+Route::group(['namespace'=>'Client','middleware' =>'cors'],function(){
     Route::get('products','ProductController@index');
 });
