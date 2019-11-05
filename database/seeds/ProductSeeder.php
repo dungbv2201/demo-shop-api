@@ -47,14 +47,14 @@ class ProductSeeder extends Seeder
 
             ]);
         }
-        foreach ($jeans as $key=>$jean){
+        foreach ($jeans as $key2=>$jean){
             \App\Models\Product::create([
-                'name' => 'Quần Jean '.($key+1),
+                'name' => 'Quần Jean '.($key2+1),
                 'price' => random_int(10,100),
                 'sale_off' => $key %2 ==0? random_int(10,40):0,
                 'category_id' =>1,
                 'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-                'image' =>$img,
+                'image' =>$jean,
                 'stock' => random_int(5,20)
 
 
