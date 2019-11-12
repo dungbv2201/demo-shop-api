@@ -14,8 +14,8 @@ class ProductController extends Controller
         return response()->json( \App\Http\Resources\Product::collection($products));
     }
 
-    public function addCart(){
-        Cart::add('293ad', 'Product 1', 1, 9.99, 550);
-        dd(Cart::content());
+    public function show($id){
+        $product = Product::where('id',$id)->first();
+        return response()->json($product);
     }
 }
