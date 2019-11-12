@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function index(){
         $products = Product::with('category')->paginate(6);
-        return response()->json( \App\Http\Resources\Product::collection($products));
+        return response()->json( new \App\Http\Resources\Product($products));
     }
 
     public function show($id){
