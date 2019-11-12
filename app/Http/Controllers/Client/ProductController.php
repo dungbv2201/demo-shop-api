@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::with('category')->paginate(6);
-        return response()->json( new \App\Http\Resources\Product($products));
+        $products = Product::paginate(6);
+        return response()->json($products);
     }
 
     public function show($id){
