@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use http\Env\Response;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,5 +18,10 @@ class ProductController extends Controller
     public function show($id){
         $product = Product::where('id',$id)->first();
         return response()->json($product);
+    }
+
+    public function getProductRelative($categoryId,$id){
+        $products = Product::where('category_id',$categoryId)->where('id','!=',$id)->get();
+        return response()->json($products);
     }
 }

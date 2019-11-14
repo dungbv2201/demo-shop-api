@@ -15,9 +15,6 @@ class Product extends Model
         'image',
         'stock'
     ];
-    protected $hidden=[
-        'category_id'
-    ];
 
     public function Category(){
         return $this->belongsTo(Category::class);
