@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\Product;
-use Gloudemans\Shoppingcart\Facades\Cart;
+use Cart;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use Illuminate\Support\Facades\Route;
+
+Route::group(['namespace'=>'Client','middleware' =>'cors'],function(){
+    Route::get('carts/update','CartController@updateCart');
+    Route::get('carts','CartController@index');
+    Route::get('carts/add/{id}','CartController@addCart');
+    Route::get('carts/delete','CartController@addCart');
+
 });
