@@ -13,18 +13,24 @@ class CartController extends Controller
     }
 
     public function store(Request $request){
-//        Cart::add([
-//            'id'=>$request->id,
-//            'name'=>$request->name,
-//            'qty'=>$request->qty,
-//            'price'=>$request->price,
-//            'options'=>[
-//                'image'=>$request->image
-//            ]
-//        ]);
-        $a =Cart::add(['id' => 1, 'name' => 'Product 1', 'qty' => 1, 'price' => 9.99, 'weight' => 550, 'options' => ['size' => 'large']]);
-        $a1 =Cart::add(['id' => 1+1, 'name' => 'Product 1', 'qty' => 1, 'price' => 9.99, 'weight' => 550, 'options' => ['size' => 'large']]);
-        $a2 =Cart::add(['id' => 1+2, 'name' => 'Product 1', 'qty' => 1, 'price' => 9.99, 'weight' => 550, 'options' => ['size' => 'large']]);
+        try{
+            Cart::add([
+                'id'=>$request->id,
+                'name'=>$request->name,
+                'qty'=>$request->qty,
+                'price'=>$request->price,
+                'options'=>[
+                    'image'=>$request->image
+                ]
+            ]);
+            return response()->json([
+                'message' =>'Add to cart successfully!'
+            ]);
+        }catch (\Exception $e){
+            return response()->json([
+                'message' =>'Add to cart fail'
+            ]);
+        }
     }
 
     public function update(Request $request){

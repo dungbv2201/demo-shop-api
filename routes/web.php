@@ -14,9 +14,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace'=>'Client','middleware' =>'cors'],function(){
-    Route::get('carts/update','CartController@update');
+    Route::post('carts/update','CartController@update');
     Route::get('carts','CartController@index');
-    Route::get('carts/add/{id}','CartController@store');
-    Route::get('carts/delete','CartController@delete');
+    Route::post('carts/add/{id}','CartController@store');
+    Route::post('carts/delete','CartController@delete');
 
 });
