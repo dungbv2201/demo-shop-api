@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Product;
 use Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
     public function index(){
-        return response()->json(Cart::content());
+        dd(Product::all());
+//        return response()->json(Cart::content());
     }
 
     public function store(Request $request){
