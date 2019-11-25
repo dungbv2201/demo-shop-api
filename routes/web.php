@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',function (){
     dd(\App\Models\Product::all());
 });
-Route::group(['namespace'=>'Client','middleware' =>'cors'],function(){
+Route::group(['namespace'=>'Client','middleware' =>'cors','prefix'=>'api'],function(){
     Route::post('carts/update','CartController@update');
     Route::get('carts','CartController@index');
     Route::post('carts/add/{id}','CartController@store');
