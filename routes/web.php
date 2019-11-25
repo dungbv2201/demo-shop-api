@@ -13,7 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 Route::get('/',function (){
-    return view('welcome');
+    dd(\App\Models\Product::all());
 });
 Route::group(['namespace'=>'Client','middleware' =>'cors'],function(){
     Route::post('carts/update','CartController@update');
